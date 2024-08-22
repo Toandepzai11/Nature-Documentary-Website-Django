@@ -1,0 +1,62 @@
+{% extends "pages/base.html" %}
+{% load static %}
+{% block title %} 
+Blog
+{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+{% endblock %}
+{% block content %} 
+<body>
+    <div class="container">
+        <header>
+            <div class="category">NATURE</div>
+            <div class="info">
+                <div class="tags">
+                    <i class="fa-solid fa-tag"></i>
+                    <span>Travel, Environment</span>
+                </div>
+                <h1 class="title">Exploring Nature's Wonders!</h1>
+                <p class="subtitle">Discover the beauty and diversity of nature's most breathtaking places around the world.</p>
+            </div>
+        </header>
+        <section class="details">
+            <div class="item">
+                <h5 class="item-title">Reading Time</h5>
+                <p class="item-text"><span class="item-data">5</span> Mins</p>
+            </div>
+            <div class="item">
+                <h5 class="item-title">Publish Date</h5>
+                <p class="item-text"><span class="item-data">August 18, 2024</span></p>
+            </div>
+            <div class="item">
+                <h5 class="item-title">View</h5>
+                <p class="item-text"><span class="item-data">8.9K</span> Views</p>
+            </div>
+        </section>
+        <article>
+            <h4>The Majesty of Natural Landscapes</h4>
+            <p>From towering mountains to vast oceans, nature offers an endless array of wonders waiting to be explored. Each landscape tells a story, shaped by time and the elements, inviting us to witness its beauty and grandeur.</p>
+            <p>Imagine standing at the edge of a forest, where the towering trees create a canopy of green, or hiking through a desert where the silence is only broken by the wind sweeping across the dunes. These are the moments that connect us to the world around us.</p>
+            <p>In the hustle and bustle of daily life, it's easy to forget the importance of nature. Yet, it's in these serene places that we find peace, rejuvenation, and a deeper connection to the Earth.</p>
+            <p>Whether you're exploring a hidden waterfall or gazing at a star-filled sky, nature has a way of reminding us of our place in the universe.</p>
+
+            <h4>The Call of the Wild: Embracing Nature's Beauty</h4>
+            <p>There's something inherently soothing about being surrounded by nature. The rustling of leaves, the chirping of birds, and the sound of a flowing river all work together to create a symphony of tranquility.</p>
+            <p>Every time we step into the natural world, we are welcomed by a myriad of sights and sounds that are both familiar and awe-inspiring. From the smallest insect to the grandest mountain, every aspect of nature plays a role in this intricate ecosystem.</p>
+            <p>As we continue to explore these natural wonders, it becomes clear that preserving these environments is not just about protecting the Earth; it's about protecting our own well-being and the future generations who will walk these same paths.</p>
+            <blockquote>
+                "Nature does not hurry, yet everything is accomplished." &mdash; Lao Tzu
+            </blockquote>
+            <p>Take a moment to step outside, breathe in the fresh air, and appreciate the beauty that surrounds you. Whether you're in a bustling city park or a remote mountain trail, nature is always there, ready to inspire and heal.</p>
+        </article>
+
+
+
+    </div>
+</body>
+
+
+
+{% endblock %}
