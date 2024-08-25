@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,4 +12,185 @@
         <button type="submit">Sign Up</button>
     </form>
 </body>
+</html> {% endcomment %}
+
+
+
+
+{% comment %} ABOVE IS THE DEFAULT {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=K2D:wght@100;200;300;400;500;600;700;800&display=swap');
+
+        * {
+            font-family: 'K2D', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .welcome, p {
+            color: white;
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        .input {
+            font-size: 15px;
+            min-height: 46px;
+            border-radius: 14px;
+            padding: 0 16px;
+            width: 100%;
+            background: #f1f1f1;
+            border: none;
+            outline: none;
+            margin-bottom: 1rem;
+        }
+
+        .button {
+            color: #fff;
+            background: #343a40;
+            border-radius: 14px;
+            font-size: 15px;
+            height: 46px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: none;
+        }
+
+        .signup-box {
+            color: aliceblue;
+            max-height: 700px;
+            width: 95%;
+            max-width: 500px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgb(26, 26, 26);
+            border-radius: 14px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 28px 0px;
+            padding: 32px;
+        }
+
+        .background {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            z-index: 0;
+            background-image: url({% static "images/fish.gif" %});
+            background-size: cover;
+            filter: blur(6px);
+            transform: scale(1.1);
+        }
+
+        a {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 15px;
+            font-weight: 100;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input {
+            font-size: 15px;
+            min-height: 46px;
+            border-radius: 14px;
+            padding: 0 16px;
+            width: 100%;
+            background: #f1f1f1;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="signup-box">
+        <h2 class="welcome">Chào mừng bạn!</h2>
+        <p>Hãy tạo tài khoản để bắt đầu sử dụng dịch vụ của chúng tôi.</p>
+        <form method="POST" class="grid">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}">Tên tài khoản</label>
+                {{ form.username }}
+                {{ form.username.errors }}
+            </div>
+            
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">Email</label>
+                {{ form.email }}
+                {{ form.email.errors }}
+            </div>
+            
+            <div class="form-group">
+                <label for="{{ form.password1.id_for_label }}">Mật khẩu</label>
+                {{ form.password1 }}
+                {{ form.password1.errors }}
+            </div>
+            
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label }}">Xác nhận mật khẩu</label>
+                {{ form.password2 }}
+                {{ form.password2.errors }}
+            </div>
+            
+            <button class="button" type="submit">Đăng ký</button>
+            
+            <div>
+                <label style="float: left; font-size: 15px; padding-top: 18px; font-weight: 100; text-align: center; width: 100%;">
+                    Đã có tài khoản? <a href="{% url 'login' %}">Đăng nhập</a>
+                </label>
+                <label style="float: left; font-size: 15px; padding-top: 18px; font-weight: 100; text-align: center; width: 100%;">
+                    Quay lại trang chủ ngay<a href="{% url 'home' %}">Quay lại</a>
+                </label>
+            </div>
+        </form>
+    </div>
+</body>
 </html>
+
