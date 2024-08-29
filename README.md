@@ -48,7 +48,12 @@ python manage.py runserver
 Access the Website:
 
 Open a web browser and navigate to http://127.0.0.1:8000/ to view the homepage.
-
+THIS WEBSITE IS USING supabase DATABASE 
+NAME: The database name, after the last / in the connection string.
+USER: The part before the first : in the connection string.
+PASSWORD: The part between the first : and the @ symbol.
+HOST: The part between the @ and the first : after it.
+PORT: The number after the : following the host (typically 5432 for PostgreSQL).
 Notes
 The project uses Django's built-in authentication system for user management.
 Ensure you have the necessary templates and static files set up as per Django’s documentation.
