@@ -30,7 +30,7 @@
             {% comment %} <a style="color: #112e42;" href="{% url 'signup' %}">Sign up</a>
             <a style="color: #112e42;" href="{% url 'login' %}">Login</a> {% endcomment %}
             {% if user.is_authenticated %}
-                <span style="color: #112e42;padding-left: 1rem">Hello, {{ user.username }}</span>
+                <span style="color: #112e42;padding-left: 1.5rem">Hello, {{ user.username }}</span>
                 <a style="color: #112e42;" href="{% url 'logout' %}">Logout</a>
             {% else %}
                 <a style="color: #112e42;" href="{% url 'signup' %}">Sign up</a>
